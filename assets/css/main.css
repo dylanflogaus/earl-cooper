@@ -13,6 +13,8 @@
   --shadow-soft: 0 16px 35px rgba(10, 36, 88, 0.12);
   --radius: 14px;
   --content-width: 1120px;
+  /* Bar height below safe-area; used when header overlays the home video hero */
+  --site-header-bar: 3.55rem;
 }
 
 *,
@@ -81,9 +83,28 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
+  max-width: 100%;
   background: rgba(10, 36, 88, 0.95);
   backdrop-filter: blur(5px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Home: header sits over the video so the hero truly fills the viewport edge-to-edge */
+body.page-home .site-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+body.page-home main {
+  padding-top: 0;
+}
+
+body.page-home .video-hero-inner {
+  padding-top: calc(env(safe-area-inset-top, 0px) + var(--site-header-bar));
 }
 
 .header-inner {
