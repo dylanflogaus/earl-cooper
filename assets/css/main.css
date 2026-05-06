@@ -163,7 +163,8 @@ p {
 
 .video-hero {
   position: relative;
-  min-height: clamp(460px, 68vh, 760px);
+  min-height: 100vh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -719,7 +720,8 @@ select:focus-visible {
   }
 
   .video-hero {
-    min-height: clamp(420px, 66vh, 620px);
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .video-hero-media {
