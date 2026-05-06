@@ -161,19 +161,90 @@ p {
   padding: 0 1rem;
 }
 
+.video-hero {
+  position: relative;
+  min-height: clamp(460px, 68vh, 760px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+  background: linear-gradient(140deg, rgba(6, 20, 50, 0.78), rgba(10, 38, 82, 0.56) 46%, rgba(118, 26, 26, 0.44));
+}
+
+.video-hero.is-fallback {
+  background:
+    linear-gradient(140deg, rgba(6, 20, 50, 0.72), rgba(10, 38, 82, 0.5) 46%, rgba(118, 26, 26, 0.38)),
+    url("https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/DSC01119.jpeg/:/rs=w:1800,h:1100") center 24%/cover no-repeat;
+}
+
+.video-hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 26%;
+  opacity: 0;
+  transition: opacity 280ms ease-out;
+}
+
+.video-hero-media.is-ready {
+  opacity: 1;
+}
+
+.video-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(140deg, rgba(6, 20, 50, 0.78), rgba(10, 38, 82, 0.56) 46%, rgba(118, 26, 26, 0.48)),
+    radial-gradient(circle at 50% 18%, rgba(242, 200, 75, 0.2), rgba(242, 200, 75, 0) 44%);
+}
+
+.video-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 920px);
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.video-hero-tagline {
+  margin: 0 0 1rem;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: clamp(2.5rem, 8vw, 5.8rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  color: #fff8dc;
+  text-shadow:
+    0 2px 3px rgba(9, 20, 46, 0.6),
+    0 18px 48px rgba(0, 0, 0, 0.48),
+    0 0 28px rgba(242, 200, 75, 0.25);
+}
+
+.video-hero-subtitle {
+  margin: 0 auto;
+  max-width: 40rem;
+  color: #e3ecfc;
+  font-size: clamp(1.02rem, 2vw, 1.3rem);
+}
+
+.video-hero-actions {
+  justify-content: center;
+  margin-top: 1.4rem;
+}
+
 .hero {
   position: relative;
   color: #fff;
   background:
-    linear-gradient(118deg, rgba(5, 18, 46, 0.93) 0%, rgba(13, 49, 108, 0.86) 48%, rgba(177, 26, 26, 0.68) 100%),
-    radial-gradient(circle at 78% 16%, rgba(242, 200, 75, 0.2) 0%, rgba(242, 200, 75, 0) 46%),
-    url("https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/DSC01119.jpeg/:/rs=w:1800,h:1100") center 26%/cover no-repeat;
+    linear-gradient(130deg, rgba(9, 30, 68, 0.95) 0%, rgba(14, 52, 111, 0.92) 55%, rgba(177, 26, 26, 0.78) 100%);
 }
 
 .hero-inner {
   width: min(100%, var(--content-width));
   margin: 0 auto;
-  padding: 6rem 1rem 5rem;
+  padding: 4.2rem 1rem 4rem;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 2rem;
@@ -647,8 +718,24 @@ select:focus-visible {
     display: block;
   }
 
+  .video-hero {
+    min-height: clamp(420px, 66vh, 620px);
+  }
+
+  .video-hero-media {
+    object-position: center 22%;
+  }
+
+  .video-hero-actions {
+    justify-content: flex-start;
+  }
+
+  .video-hero-inner {
+    text-align: left;
+  }
+
   .hero-inner {
-    padding-top: 5rem;
+    padding-top: 2.8rem;
   }
 
   .card-grid,
