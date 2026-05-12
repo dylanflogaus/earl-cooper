@@ -7,6 +7,8 @@
     <meta name="description" content="Official campaign website for Reverend Earl Cooper for Delaware U.S. Congress.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://player.vimeo.com">
+    <link rel="preconnect" href="https://i.vimeocdn.com">
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
@@ -22,7 +24,6 @@
             <li><a data-nav-link href="about.html">About</a></li>
             <li><a data-nav-link href="issues.html">Issues</a></li>
             <li><a data-nav-link href="commitment.html">Commitment</a></li>
-            <li><a data-nav-link href="referrals.html">Referrals</a></li>
             <li><a data-nav-link href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -31,10 +32,13 @@
 
     <main id="main-content">
       <section class="video-hero" aria-label="Faith Family and Future">
-        <video class="video-hero-media" data-video-hero autoplay muted loop playsinline preload="none" poster="https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/DSC01119.jpeg/:/rs=w:1800,h:1100"></video>
+        <div class="video-hero-media-stack" data-video-hero-stack>
+          <video class="video-hero-media" data-video-hero-layer autoplay muted playsinline preload="none" poster="https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/DSC01119.jpeg/:/rs=w:1800,h:1100"></video>
+          <video class="video-hero-media" data-video-hero-layer autoplay muted playsinline preload="none" poster="https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/DSC01119.jpeg/:/rs=w:1800,h:1100"></video>
+        </div>
         <div class="video-hero-overlay"></div>
         <div class="video-hero-inner">
-          <p class="eyebrow" style="color:#f8cf73;">Earl Cooper For Congress</p>
+          <h1 class="eyebrow" style="color:#f8cf73;">Earl Cooper For Congress</h1>
           <p class="video-hero-tagline">Faith Family &amp; Future</p>
           <p class="video-hero-subtitle">A Delaware-first vision rooted in conviction, service, and opportunity.</p>
           <div class="btn-row video-hero-actions">
@@ -44,22 +48,70 @@
         </div>
       </section>
 
-      <section class="section section-alt">
-        <div class="container split">
-          <div class="image-panel">
-            <img src="https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/DSC01119.jpeg/:/cr=t:12.5%25,l:0%25,w:100%25,h:75%25/rs=w:1200,h:900" alt="Reverend Earl Cooper with supporters at a community gathering.">
+      <section class="section section-video">
+        <div class="container video-inner">
+          <div class="section-header">
+            <p class="eyebrow">Campaign Video</p>
+            <h2>Message From Earl Cooper</h2>
           </div>
-          <div>
-            <p class="eyebrow">About Earl Cooper</p>
-            <h2>Faith, Family, and Service</h2>
-            <p class="lead">
-              Guided by faith, committed to family, and ready to fight for Delaware.
-              Reverend Earl Cooper brings a community-first leadership style focused on opportunity and truth.
-            </p>
-            <div class="btn-row">
-              <a class="btn btn-primary" href="about.html">Read full story</a>
-              <a class="btn btn-outline" href="contact.html">Volunteer</a>
+          <div class="video-embed">
+            <div class="video-embed-inner">
+              <iframe
+                title="Campaign video from Earl Cooper"
+                src="https://player.vimeo.com/video/971646899?h=e6f2ca070e&amp;playsinline=1&amp;preload=auto&amp;initial_quality=1080p&amp;min_quality=720p"
+                width="1920"
+                height="1080"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+                allowfullscreen
+              ></iframe>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow">Campaign Focus</p>
+            <h2>Standing for Delaware</h2>
+            <p class="lead">
+              A practical platform centered on families, neighborhood safety, small-business growth,
+              and direct accountability to seniors.
+            </p>
+          </div>
+          <div class="card-grid">
+            <a
+              class="card card-accent-red"
+              href="issues.html#protect-our-kids"
+              aria-label="Protect Our Kids — read the full priority on Issues"
+            >
+              <h3>Protect Our Kids</h3>
+              <p>Our children are our greatest treasure, and if we don't protect them, we fail the future of Delaware.</p>
+              <p>"Let me be clear: boys should not be competing in girls' sports!"</p>
+            </a>
+            <a
+              class="card card-accent-blue"
+              href="issues.html#community-small-business"
+              aria-label="Community and small business growth — read the full priority on Issues"
+            >
+              <h3>Community &amp; Small Business Growth</h3>
+              <p>
+                Work hand-in-hand with local communities, invest in intervention, and remove barriers
+                that hold back economic growth across Delaware.
+              </p>
+            </a>
+            <a
+              class="card card-accent-gold"
+              href="issues.html#senior-access"
+              aria-label="Commitment to senior access — read the full priority on Issues"
+            >
+              <h3>Commitment to Senior Access</h3>
+              <p>
+                Launch a person-to-person Senior Access Hotline so every senior can speak to a real human
+                being about concerns, not a machine or endless paperwork.
+              </p>
+            </a>
           </div>
         </div>
       </section>
@@ -90,36 +142,26 @@
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <p class="eyebrow">Campaign Focus</p>
-            <h2>Standing for Delaware</h2>
-            <p class="lead">
-              A practical platform centered on families, neighborhood safety, small-business growth,
-              and direct accountability to seniors.
-            </p>
+      <section class="section section-alt">
+        <div class="container split">
+          <div class="image-panel">
+            <img src="https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/DSC01119.jpeg/:/cr=t:12.5%25,l:0%25,w:100%25,h:75%25/rs=w:1200,h:900" alt="Reverend Earl Cooper with supporters at a community gathering.">
           </div>
-          <div class="card-grid">
-            <article class="card card-accent-red">
-              <h3>Protect Our Kids</h3>
-              <p>Our children are our greatest treasure, and if we don't protect them, we fail the future of Delaware.</p>
-              <p>"Let me be clear: boys should not be competing in girls' sports!"</p>
-            </article>
-            <article class="card card-accent-blue">
-              <h3>Community &amp; Small Business Growth</h3>
-              <p>
-                Work hand-in-hand with local communities, invest in intervention, and remove barriers
-                that hold back economic growth across Delaware.
-              </p>
-            </article>
-            <article class="card card-accent-gold">
-              <h3>Commitment to Senior Access</h3>
-              <p>
-                Launch a person-to-person Senior Access Hotline so every senior can speak to a real human
-                being about concerns, not a machine or endless paperwork.
-              </p>
-            </article>
+          <div>
+            <p class="eyebrow">About Earl Cooper</p>
+            <h2>Faith, Family, and Service</h2>
+            <p class="lead">
+              Guided by faith, committed to family, and ready to fight for Delaware.
+              Reverend Earl Cooper brings a community-first leadership style focused on opportunity and truth.
+              He believes leadership starts with listening—on the doorstep, at town halls, and in Congress—and
+              turning what he hears into honest, practical action. From stronger public schools and support for
+              local entrepreneurs to protecting the dignity of Delaware seniors, Earl is focused on the issues
+              that shape everyday life across the First State.
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="about.html">Read full story</a>
+              <a class="btn btn-outline" href="contact.html">Volunteer</a>
+            </div>
           </div>
         </div>
       </section>
@@ -127,7 +169,7 @@
       <section class="section cta-band">
         <div class="container split">
           <div>
-            <p class="eyebrow" style="color:#f8cf73;">Stay Connected</p>
+            <p class="eyebrow">Stay Connected</p>
             <h2>Subscribe For Campaign Updates</h2>
             <p>
               Receive events, announcements, and opportunities to support Earl Cooper for Congress.
@@ -140,47 +182,26 @@
           </form>
         </div>
       </section>
-
-      <section class="section section-video">
-        <div class="container video-inner">
-          <div class="section-header">
-            <p class="eyebrow">Campaign Video</p>
-            <h2>Message From Earl Cooper</h2>
-          </div>
-          <div class="video-embed">
-            <div class="video-embed-inner">
-              <iframe
-                title="Campaign video from Earl Cooper"
-                src="https://player.vimeo.com/video/971646899?h=e6f2ca070e"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <h2 style="color:#fff; margin-bottom:0.7rem;">Earl Cooper For Congress</h2>
+          <h2>Earl Cooper For Congress</h2>
           <p>Reverend Earl Cooper for Congress<br>Delaware, United States</p>
           <p class="small">Email: <a href="mailto:earlcooperforcongress@gmail.com">earlcooperforcongress@gmail.com</a> | Phone: <a href="tel:3023172275">(302) 317-2275</a></p>
         </div>
-        <div>
+        <div class="footer-explore">
+          <h3 class="footer-heading">Explore</h3>
           <nav class="footer-nav" aria-label="Footer">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="issues.html">Issues</a>
             <a href="commitment.html">Commitment</a>
-            <a href="referrals.html">Referrals</a>
             <a href="contact.html">Contact</a>
           </nav>
+          <p class="small footer-copyright">Copyright &copy; <span data-year></span> Earl Cooper - All Rights Reserved.</p>
         </div>
-      </div>
-      <div class="container">
-        <p class="small">Copyright &copy; <span data-year></span> Earl Cooper - All Rights Reserved.</p>
       </div>
     </footer>
     <script src="assets/js/main.js?v=202610"></script>

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css?v=20260512k">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -22,7 +22,6 @@
             <li><a data-nav-link href="about.html">About</a></li>
             <li><a data-nav-link href="issues.html">Issues</a></li>
             <li><a data-nav-link href="commitment.html">Commitment</a></li>
-            <li><a data-nav-link href="referrals.html">Referrals</a></li>
             <li><a data-nav-link href="contact.html">Contact</a></li>
           </ul>
         </nav>
@@ -71,13 +70,10 @@
       </section>
 
       <section class="section section-alt">
-        <div class="container split">
-          <div class="image-panel">
-            <img src="https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/DSC01119.jpeg/:/cr=t:12.5%25,l:0%25,w:100%25,h:75%25/rs=w:1200,h:900" alt="Reverend Earl Cooper with Delaware neighbors at a community gathering.">
-          </div>
-          <div>
+        <div class="container split-stack">
+          <div class="split-stack-copy">
             <p class="eyebrow">Delaware First</p>
-            <h2>Built With Hope and Commitment</h2>
+            <h2>Bipartisan support for Hope</h2>
             <p class="lead">
               "Together we can protect our families, defend our seniors, and secure a future built with
               hope, commitment to Delaware residents, and Delaware first values."
@@ -87,6 +83,12 @@
               problem-solving and visible results.
             </p>
             <a class="btn btn-primary" href="contact.html">Get involved today</a>
+          </div>
+          <div class="image-panel image-panel-duo split-stack-gallery">
+            <div class="image-panel-grid">
+              <img src="https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/IMG_0031.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1200,cg:true" alt="Reverend Earl Cooper greeting Delaware residents at a community event.">
+              <img src="https://img1.wsimg.com/isteam/ip/7aca911b-c59e-40e2-817f-d52fc576a9c3/IMG_0030.jpeg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1200,cg:true" alt="Reverend Earl Cooper connecting with community members and partners.">
+            </div>
           </div>
         </div>
       </section>
@@ -103,33 +105,74 @@
           </div>
         </div>
       </section>
+
+      <section class="section section-alt" aria-labelledby="commitment-gallery-heading">
+        <div class="container">
+          <div class="section-header">
+            <h2 id="commitment-gallery-heading">Campaign Gallery</h2>
+            <p class="lead">
+              Community gatherings, town halls, and everyday Delaware moments behind this commitment.
+            </p>
+          </div>
+          <div
+            class="media-carousel"
+            data-carousel
+            data-carousel-manifest="assets/img/carousel/manifest.json"
+          >
+            <button
+              type="button"
+              class="media-carousel-nav media-carousel-nav--prev"
+              data-carousel-prev
+              aria-label="Previous photo"
+            >
+              <span aria-hidden="true">‹</span>
+            </button>
+            <div
+              class="media-carousel-viewport"
+              data-carousel-viewport
+              tabindex="0"
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="Campaign photo gallery"
+            >
+              <ul class="media-carousel-track" data-carousel-track></ul>
+            </div>
+            <button
+              type="button"
+              class="media-carousel-nav media-carousel-nav--next"
+              data-carousel-next
+              aria-label="Next photo"
+            >
+              <span aria-hidden="true">›</span>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-grid">
         <div>
-          <h2 style="color:#fff; margin-bottom:0.7rem;">Earl Cooper For Congress</h2>
+          <h2>Earl Cooper For Congress</h2>
           <p class="footer-tagline tagline-wordmark" aria-label="Faith, Family, and Future">
             <span class="tagline-segment">Faith</span><span class="tagline-sep" aria-hidden="true"></span><span class="tagline-segment">Family</span><span class="tagline-sep" aria-hidden="true"></span><span class="tagline-segment"><span class="tagline-amp">&amp;</span> Future</span>
           </p>
           <p>Reverend Earl Cooper for Congress<br>Delaware, United States</p>
           <p class="small">Email: <a href="mailto:earlcooperforcongress@gmail.com">earlcooperforcongress@gmail.com</a> | Phone: <a href="tel:3023172275">(302) 317-2275</a></p>
         </div>
-        <div>
+        <div class="footer-explore">
+          <h3 class="footer-heading">Explore</h3>
           <nav class="footer-nav" aria-label="Footer">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="issues.html">Issues</a>
             <a href="commitment.html">Commitment</a>
-            <a href="referrals.html">Referrals</a>
             <a href="contact.html">Contact</a>
           </nav>
+          <p class="small footer-copyright">Copyright &copy; <span data-year></span> Earl Cooper - All Rights Reserved.</p>
         </div>
       </div>
-      <div class="container">
-        <p class="small">Copyright &copy; <span data-year></span> Earl Cooper - All Rights Reserved.</p>
-      </div>
     </footer>
-    <script src="assets/js/main.js?v=202610"></script>
+    <script src="assets/js/main.js?v=20260512k"></script>
   </body>
 </html>

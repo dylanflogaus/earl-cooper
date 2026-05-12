@@ -12,8 +12,6 @@ This redesign keeps campaign imagery tied to the original Earl Cooper site where
   - source: `https://images.unsplash.com/photo-1521790797524-b2497295b8a0?auto=format&fit=crop&w=1200&q=80`
 - `assets/img/commitment-townhall.jpg`
   - source: `https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1200&q=80`
-- `assets/img/referrals-community.jpg`
-  - source: `https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80`
 
 ## Unsplash image usage by page
 
@@ -23,6 +21,4 @@ This redesign keeps campaign imagery tied to the original Earl Cooper site where
   - `assets/img/issues-community.jpg`
 - `commitment.html`:
   - `assets/img/commitment-townhall.jpg`
-- `referrals.html`:
-  - `assets/img/referrals-community.jpg`
 
