@@ -535,6 +535,7 @@ a.issue-item:focus-visible {
   background: var(--color-gold);
 }
 
+.issue-item-body h2,
 .issue-item-body h3 {
   font-size: clamp(1.35rem, 2.5vw, 1.65rem);
   margin-bottom: 0.5rem;
@@ -544,6 +545,17 @@ a.issue-item:focus-visible {
   color: var(--color-muted);
   margin-bottom: 0.35rem;
   max-width: 52rem;
+}
+
+.issue-item-body ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--color-muted);
+  max-width: 52rem;
+}
+
+.issue-item-body li + li {
+  margin-top: 0.35rem;
 }
 
 .issue-item-cue {
