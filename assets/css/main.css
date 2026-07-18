@@ -302,8 +302,19 @@ body.page-home .video-hero-inner {
   text-align: center;
 }
 
+.video-hero-office {
+  margin: 0 0 0.45rem;
+  font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f5d680;
+  text-shadow: 0 1px 3px rgba(9, 20, 46, 0.55);
+}
+
 .video-hero-name {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.65rem;
   font-family: "EB Garamond", Georgia, serif;
   font-size: clamp(2.85rem, 9vw, 5.4rem);
   font-weight: 700;
@@ -315,19 +326,8 @@ body.page-home .video-hero-inner {
     0 14px 40px rgba(0, 0, 0, 0.45);
 }
 
-.video-hero-office {
-  margin: 0 0 1rem;
-  font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
-  font-size: clamp(0.95rem, 2vw, 1.15rem);
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #f5d680;
-  text-shadow: 0 1px 3px rgba(9, 20, 46, 0.55);
-}
-
 .video-hero-tagline {
-  margin: 0 0 0.75rem;
+  margin: 0;
   font-family: "EB Garamond", Georgia, serif;
   font-size: clamp(1.45rem, 3.2vw, 2.05rem);
   font-weight: 600;
@@ -335,15 +335,6 @@ body.page-home .video-hero-inner {
   letter-spacing: 0.02em;
   color: #fff8dc;
   text-shadow: 0 2px 8px rgba(9, 20, 46, 0.5);
-}
-
-.video-hero-subtitle {
-  margin: 0 auto;
-  max-width: 36rem;
-  color: #e3ecfc;
-  font-size: clamp(1.02rem, 2vw, 1.2rem);
-  line-height: 1.5;
-  text-shadow: 0 1px 4px rgba(9, 20, 46, 0.45);
 }
 
 .video-hero-actions {
@@ -356,53 +347,6 @@ body.page-home .video-hero-inner {
   .video-hero-media-stack .video-hero-media {
     transition: none;
   }
-}
-
-.hero {
-  position: relative;
-  color: #fff;
-  background:
-    linear-gradient(130deg, rgba(9, 30, 68, 0.95) 0%, rgba(14, 52, 111, 0.92) 55%, rgba(177, 26, 26, 0.78) 100%);
-}
-
-.hero-inner {
-  width: min(100%, var(--content-width));
-  margin: 0 auto;
-  padding: 4.2rem 1rem 4rem;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 2rem;
-  align-items: end;
-}
-
-.hero h1 {
-  color: #fff;
-  font-size: clamp(2rem, 4vw, 3.4rem);
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
-  max-width: 42rem;
-}
-
-.hero-panel {
-  background: rgba(9, 24, 53, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  padding: 1.2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-}
-
-.hero-panel h2 {
-  color: #fff;
-  font-size: 1.4rem;
-  margin-bottom: 0.8rem;
-}
-
-.hero-panel p {
-  margin-bottom: 1rem;
-  color: #dce8fb;
 }
 
 .quote-band {
@@ -604,6 +548,11 @@ a.card:focus-visible {
 #community-small-business,
 #senior-access {
   scroll-margin-top: calc(var(--site-header-bar) + 1rem);
+}
+
+.card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 0.2rem;
 }
 
 .card-link-cue {
@@ -1371,7 +1320,6 @@ dl.list-clean dd {
 }
 
 @media (max-width: 960px) {
-  .hero-inner,
   .split,
   .footer-grid {
     grid-template-columns: 1fr;
@@ -1465,10 +1413,6 @@ dl.list-clean dd {
 
   .quote-band .btn-ghost {
     margin-inline: 0;
-  }
-
-  .hero-inner {
-    padding-top: 2.8rem;
   }
 
   .card-grid,
