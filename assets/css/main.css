@@ -573,7 +573,7 @@ a.issue-item:focus-visible .issue-item-cue {
   color: var(--color-red);
 }
 
-/* --- Cards (forms, interactive containers only) --- */
+/* --- Cards (commitment pledges, forms, interactive containers) --- */
 
 .card-grid {
   display: grid;
