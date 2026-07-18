@@ -1150,14 +1150,14 @@ dl.list-clean dd {
   padding: 1.65rem 0 1.15rem;
 }
 
-.site-footer a {
+.site-footer .small a {
   color: #f5d680;
   text-decoration: none;
   text-underline-offset: 3px;
 }
 
-.site-footer a:hover,
-.site-footer a:focus-visible {
+.site-footer .small a:hover,
+.site-footer .small a:focus-visible {
   color: #fff;
   text-decoration: underline;
   outline: none;
