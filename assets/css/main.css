@@ -1390,10 +1390,6 @@ dl.list-clean dd {
     padding-bottom: 2rem;
   }
 
-  .video-hero-name {
-    font-size: clamp(2.6rem, 12vw, 3.6rem);
-  }
-
   .quote-band {
     padding: 2.8rem 0;
   }
