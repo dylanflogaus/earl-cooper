@@ -849,6 +849,10 @@ a.card:focus-visible .card-link-cue {
   color: #ffffff;
 }
 
+.section-video .section-header h2::after {
+  display: none;
+}
+
 .section-video .section-header .eyebrow {
   color: var(--color-gold-light);
 }
@@ -1549,5 +1553,227 @@ dl.list-clean dd {
 
   .page-hero {
     padding: 3rem 0 2.4rem;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Motion: hero entrance, scroll reveals, soft image lift                     */
+/* -------------------------------------------------------------------------- */
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.35rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes page-hero-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes gold-line-draw {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-eyebrow,
+html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-brand,
+html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-tagline,
+html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-subtitle,
+html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-actions,
+html.js-motion .page-hero[data-hero-motion]:not(.is-hero-ready) .eyebrow,
+html.js-motion .page-hero[data-hero-motion]:not(.is-hero-ready) h1,
+html.js-motion .page-hero[data-hero-motion]:not(.is-hero-ready) p {
+  opacity: 0;
+}
+
+.video-hero.is-hero-ready .video-hero-eyebrow,
+.video-hero.is-hero-ready .video-hero-brand,
+.video-hero.is-hero-ready .video-hero-tagline,
+.video-hero.is-hero-ready .video-hero-subtitle,
+.video-hero.is-hero-ready .video-hero-actions {
+  animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.video-hero.is-hero-ready .video-hero-eyebrow {
+  animation-delay: 0.04s;
+}
+
+.video-hero.is-hero-ready .video-hero-brand {
+  animation-delay: 0.1s;
+}
+
+.video-hero.is-hero-ready .video-hero-tagline {
+  animation-delay: 0.18s;
+}
+
+.video-hero.is-hero-ready .video-hero-subtitle {
+  animation-delay: 0.26s;
+}
+
+.video-hero.is-hero-ready .video-hero-actions {
+  animation-delay: 0.34s;
+}
+
+.page-hero.is-hero-ready .eyebrow,
+.page-hero.is-hero-ready h1,
+.page-hero.is-hero-ready p {
+  animation: page-hero-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.page-hero.is-hero-ready .eyebrow {
+  animation-delay: 0.02s;
+}
+
+.page-hero.is-hero-ready h1 {
+  animation-delay: 0.08s;
+}
+
+.page-hero.is-hero-ready p {
+  animation-delay: 0.14s;
+}
+
+html.js-motion .page-hero[data-hero-motion]:not(.is-hero-ready)::after,
+html.js-motion .quote-band:not(.is-inview)::before,
+html.js-motion .section-video:not(.is-inview)::before,
+html.js-motion .cta-band:not(.is-inview)::before {
+  transform: scaleX(0);
+  opacity: 0;
+  transform-origin: center;
+}
+
+.page-hero.is-hero-ready::after,
+.quote-band.is-inview::before,
+.section-video.is-inview::before,
+.cta-band.is-inview::before {
+  transform-origin: center;
+  animation: gold-line-draw 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.page-hero.is-hero-ready::after {
+  animation-delay: 0.18s;
+}
+
+.quote-band.is-inview::before,
+.section-video.is-inview::before,
+.cta-band.is-inview::before {
+  animation-delay: 0.05s;
+}
+
+html.js-motion-armed .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, 1.4rem, 0);
+  transition: none;
+}
+
+html.js-motion-armed .reveal-scale:not(.is-visible) {
+  transform: translate3d(0, 1rem, 0) scale(0.985);
+}
+
+html.js-motion-armed .reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition:
+    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js-motion-armed .reveal-scale.is-visible {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+html.js-motion-armed .reveal.is-visible.reveal-delay-1 {
+  transition-delay: 0.08s;
+}
+
+html.js-motion-armed .reveal.is-visible.reveal-delay-2 {
+  transition-delay: 0.16s;
+}
+
+html.js-motion-armed .reveal.is-visible.reveal-delay-3 {
+  transition-delay: 0.24s;
+}
+
+html.js-motion-armed .reveal.is-visible.reveal-delay-4 {
+  transition-delay: 0.32s;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .image-panel img,
+  .about-photo img {
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .image-panel:hover img,
+  .about-photo:hover img {
+    transform: scale(1.03);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-eyebrow,
+  html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-brand,
+  html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-tagline,
+  html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-subtitle,
+  html.js-motion .video-hero[data-hero-motion]:not(.is-hero-ready) .video-hero-actions,
+  html.js-motion .page-hero[data-hero-motion]:not(.is-hero-ready) .eyebrow,
+  html.js-motion .page-hero[data-hero-motion]:not(.is-hero-ready) h1,
+  html.js-motion .page-hero[data-hero-motion]:not(.is-hero-ready) p,
+  html.js-motion-armed .reveal:not(.is-visible),
+  html.js-motion-armed .reveal-scale:not(.is-visible),
+  .reveal,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+
+  .video-hero.is-hero-ready .video-hero-eyebrow,
+  .video-hero.is-hero-ready .video-hero-brand,
+  .video-hero.is-hero-ready .video-hero-tagline,
+  .video-hero.is-hero-ready .video-hero-subtitle,
+  .video-hero.is-hero-ready .video-hero-actions,
+  .page-hero.is-hero-ready .eyebrow,
+  .page-hero.is-hero-ready h1,
+  .page-hero.is-hero-ready p,
+  .page-hero.is-hero-ready::after,
+  .quote-band.is-inview::before,
+  .section-video.is-inview::before,
+  .cta-band.is-inview::before,
+  html.js-motion .page-hero[data-hero-motion]:not(.is-hero-ready)::after,
+  html.js-motion .quote-band:not(.is-inview)::before,
+  html.js-motion .section-video:not(.is-inview)::before,
+  html.js-motion .cta-band:not(.is-inview)::before {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .image-panel img,
+  .about-photo img {
+    transition: none;
+  }
+
+  .image-panel:hover img,
+  .about-photo:hover img {
+    transform: none;
   }
 }

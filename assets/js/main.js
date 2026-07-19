@@ -337,9 +337,137 @@ function initVimeoScrollAutoplay() {
     .catch(() => {});
 }
 
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function isElementInRevealRange(el) {
+  const rect = el.getBoundingClientRect();
+  const viewH = window.innerHeight || document.documentElement.clientHeight;
+  return rect.top < viewH * 0.92 && rect.bottom > viewH * 0.05;
+}
+
+function initHeroEntrance() {
+  const heroes = document.querySelectorAll(".video-hero, .page-hero");
+  if (!heroes.length) return;
+
+  heroes.forEach((hero) => {
+    if (!hero.hasAttribute("data-hero-motion")) {
+      hero.setAttribute("data-hero-motion", "");
+    }
+    if (prefersReducedMotion()) {
+      hero.classList.add("is-hero-ready");
+      return;
+    }
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        hero.classList.add("is-hero-ready");
+      });
+    });
+  });
+}
+
+function initScrollReveal() {
+  const bands = Array.from(document.querySelectorAll(".quote-band, .section-video, .cta-band"));
+
+  if (prefersReducedMotion() || !("IntersectionObserver" in window)) {
+    bands.forEach((el) => el.classList.add("is-inview"));
+    document.documentElement.classList.add("js-motion-armed");
+    return;
+  }
+
+  const revealTargets = [];
+
+  const markReveal = (el, { scale = false, delay = 0 } = {}) => {
+    if (!(el instanceof HTMLElement)) return;
+    if (el.closest(".video-hero-inner") || el.closest(".page-hero")) return;
+    if (el.classList.contains("reveal")) return;
+    el.classList.add("reveal");
+    if (scale) el.classList.add("reveal-scale");
+    if (delay > 0) el.classList.add(`reveal-delay-${delay}`);
+    revealTargets.push(el);
+  };
+
+  document.querySelectorAll(".section-header").forEach((el) => markReveal(el));
+  document.querySelectorAll(".card-grid > .card").forEach((el, i) => {
+    markReveal(el, { delay: Math.min((i % 3) + 1, 3) });
+  });
+  document.querySelectorAll(".stats > .stat").forEach((el, i) => {
+    markReveal(el, { delay: Math.min((i % 3) + 1, 3) });
+  });
+  document.querySelectorAll(".quote-list > .quote").forEach((el, i) => {
+    markReveal(el, { delay: Math.min(i + 1, 3) });
+  });
+  document.querySelectorAll(".quote-band-inner > *").forEach((el, i) => {
+    markReveal(el, { delay: Math.min(i + 1, 3) });
+  });
+  document.querySelectorAll(".split > *").forEach((el, i) => {
+    markReveal(el, { delay: Math.min(i + 1, 2) });
+  });
+  document.querySelectorAll(".split-stack > *").forEach((el, i) => {
+    markReveal(el, { delay: Math.min(i + 1, 2) });
+  });
+  document.querySelectorAll(".video-embed-inner").forEach((el) => {
+    markReveal(el, { scale: true });
+  });
+  document.querySelectorAll(".form-card").forEach((el, i) => {
+    markReveal(el, { delay: Math.min(i + 1, 2) });
+  });
+  document.querySelectorAll(".about-photo").forEach((el) => {
+    markReveal(el, { scale: true });
+  });
+  document.querySelectorAll(".media-carousel").forEach((el) => markReveal(el));
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -5% 0px" }
+  );
+
+  revealTargets.forEach((el) => {
+    if (isElementInRevealRange(el)) {
+      el.classList.add("is-visible");
+    } else {
+      revealObserver.observe(el);
+    }
+  });
+
+  const bandObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-inview");
+        bandObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
+  );
+
+  bands.forEach((el) => {
+    if (isElementInRevealRange(el)) {
+      el.classList.add("is-inview");
+    } else {
+      bandObserver.observe(el);
+    }
+  });
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.documentElement.classList.add("js-motion-armed");
+    });
+  });
+}
+
 initVideoHero();
 initVideoHeroParallax();
 initVimeoScrollAutoplay();
+initHeroEntrance();
+initScrollReveal();
 
 function parseDimsFromFilename(name) {
   const wh = /w_(\d+),h_(\d+)/.exec(name);
